@@ -1,7 +1,7 @@
 # qb-lifeEvader
 
 Discord - https://discord.gg/2aW2Tatfxp
-
+Preview - https://www.youtube.com/watch?v=EJzuMsftL8c
 Uses the latest versions 
 
 
