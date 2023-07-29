@@ -18,7 +18,7 @@ RegisterNetEvent('police:SetCopCount', function(amount)
     CurrentCops = amount
 end)
 
-RegisterNetEvent('qb-lifeevader:EndHeistCommand', function()
+RegisterNetEvent('qb-lifeinvader:EndHeistCommand', function()
     GotJob = false
     Finished = true
     GotJobA = false
