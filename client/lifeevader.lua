@@ -23,15 +23,15 @@ Citizen.CreateThread(function()
         scenario = Config.leBossScenario,
         target = { 
             options = {
-                {type = "client",event = "qb-lifeevader:StartleDataBreach",icon = "fas fa-comment",label = "Start LifeEvader Heist",},
-                {type = "server",event = "qb-lifeevader:ReceivePaymentle",icon = "fas fa-hand",label = "Receive Payment",item = "data_usb",},
+                {type = "client",event = "qb-lifeinvader:StartleDataBreach",icon = "fas fa-comment",label = "Start Lifeinvader Heist",},
+                {type = "server",event = "qb-lifeinvader:ReceivePaymentle",icon = "fas fa-hand",label = "Receive Payment",item = "data_usb",},
             },
           distance = 2.5,
         },
     })
 end)
 
-RegisterNetEvent('qb-lifeevader:StartleDataBreach', function()
+RegisterNetEvent('qb-lifeinvader:StartleDataBreach', function()
     if GotJob == false then
         TriggerEvent('animations:client:EmoteCommandStart', {"wait"})
             QBCore.Functions.Progressbar('pickup', 'Getting Job...', 5000, false, true, {disableMovement = true,disableCarMovement = true,disableMouse = false,disableCombat = true,}, {}, {}, {}, function()
@@ -55,7 +55,7 @@ RegisterNetEvent('qb-lifeevader:StartleDataBreach', function()
     end
 end)
 
-RegisterNetEvent('qb-lifeevader:leHack1', function()
+RegisterNetEvent('qb-lifeinvader:leHack1', function()
     if QBCore.Functions.HasItem(Config.HackItem) then
         TriggerEvent('animations:client:EmoteCommandStart', {"type"})
         QBCore.Functions.Progressbar('cnct_elect', 'Hacking Computer', HackingTime, false, true, {disableMovement = true,disableCarMovement = true,disableMouse = false,disableCombat = true,}, {}, {}, {}, function()
@@ -67,13 +67,13 @@ RegisterNetEvent('qb-lifeevader:leHack1', function()
                 Wait(100)
                 TriggerEvent('animations:client:EmoteCommandStart', {"type"})
                 Wait(500)
-                    TriggerServerEvent('police:server:policeAlert', 'LifeEvader Heist In Progress')
+                    TriggerServerEvent('police:server:policeAlert', 'Lifeinvader Heist In Progress')
                 Wait(500)
                 QBCore.Functions.Progressbar('po_usb', 'Rerouting Controls..', HackingTime, false, true, {disableMovement = true,disableCarMovement = true,disableMouse = false,disableCombat = true,}, {}, {}, {}, function()
                 end)
                 Wait(HackingTime)
                 TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-                TriggerServerEvent('qb-lifeevader:gatherlenpc')
+                TriggerServerEvent('qb-lifeinvader:gatherlenpc')
                 QBCore.Functions.Notify('Go To Another Computer, After Hacking 5 Computers go to the office and grab the data', 'primary', 8000)
                 Wait(7500)
                 leHacksDone = leHacksDone+1
@@ -89,7 +89,7 @@ RegisterNetEvent('qb-lifeevader:leHack1', function()
                 QBCore.Functions.Notify('You failed Hacking, try again', 'error', 5000)
                 if Config.PoliceAlertle then
                 end
-                TriggerServerEvent('qb-lifeevader:gatherlenpc')
+                TriggerServerEvent('qb-lifeinvader:gatherlenpc')
             end
         end, Config.leHackType, Config.leHackTime, 0)
     else
@@ -97,7 +97,7 @@ RegisterNetEvent('qb-lifeevader:leHack1', function()
     end
 end)
 
-RegisterNetEvent('qb-lifeevader:leHackFinal', function()
+RegisterNetEvent('qb-lifeinvader:leHackFinal', function()
     if QBCore.Functions.HasItem(Config.HackItem) then
         TriggerEvent('animations:client:EmoteCommandStart', {"type"})
         QBCore.Functions.Progressbar('cnct_elect', 'Braking Final Firewall...', HackingTime, false, true, {disableMovement = true,disableCarMovement = true,disableMouse = false,disableCombat = true,}, {}, {}, {}, function()
@@ -113,8 +113,8 @@ RegisterNetEvent('qb-lifeevader:leHackFinal', function()
                 end)
                 Wait(HackingTime)
                 TriggerEvent('animations:client:EmoteCommandStart', {"c"})
-                TriggerServerEvent('qb-lifeevader:leFinalDone')
-                TriggerServerEvent('qb-lifeevader:gatherlenpc')
+                TriggerServerEvent('qb-lifeinvader:leFinalDone')
+                TriggerServerEvent('qb-lifeinvader:gatherlenpc')
                 QBCore.Functions.Notify('You downloaded the file, now take it back!', 'primary', 8000)
                 Wait(7500)
                 RemoveleFinalTarget()
@@ -122,7 +122,7 @@ RegisterNetEvent('qb-lifeevader:leHackFinal', function()
             else
                 TriggerEvent('animations:client:EmoteCommandStart', {"c"})
                 QBCore.Functions.Notify('You failed Hacking, try again', 'error', 5000)
-                TriggerServerEvent('qb-lifeevader:gatherlenpc')
+                TriggerServerEvent('qb-lifeinvader:gatherlenpc')
             end
         end, Config.leHackType, Config.leHackTime, 0)
     else
@@ -146,9 +146,9 @@ function loadModel(model)
     end
 end
 
-RegisterNetEvent('qb-lifeevader:SpawnleGuards', function()
+RegisterNetEvent('qb-lifeinvader:SpawnleGuards', function()
     SpawnGuardsle()
-    TriggerServerEvent('qb-lifeevader:ResetGuardsle')
+    TriggerServerEvent('qb-lifeinvader:ResetGuardsle')
 end)
 
 function SpawnGuardsle()
@@ -214,7 +214,7 @@ function Exportle1Target()
         debugpoly = Config.DebugPoly,
     }, {
         options = {
-            {type = "client",event = "qb-lifeevader:leHack1",icon = "fas fa-shield",label = "Hack The Computer",item = Config.HackItem,},
+            {type = "client",event = "qb-lifeinvader:leHack1",icon = "fas fa-shield",label = "Hack The Computer",item = Config.HackItem,},
         },
         distance = 2.0
     })
@@ -228,7 +228,7 @@ function ExportleFinalTarget()
         debugpoly = Config.DebugPoly,
     }, {
         options = {
-            {type = "client",event = "qb-lifeevader:leHackFinal",icon = "fas fa-hand",label = "Extract Files",item = Config.HackItem,},
+            {type = "client",event = "qb-lifeinvader:leHackFinal",icon = "fas fa-hand",label = "Extract Files",item = Config.HackItem,},
         },
         distance = 2.0
     })
