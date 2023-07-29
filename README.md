@@ -18,4 +18,4 @@ Credit for the original code goes to oOosayeroo Scripts. I used their code as a 
 
 ```
 
-	["Data_Usb"]                       = {["name"] = "Data_Usb", 				        ["label"] = "Top Secret Data", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "Data_Usb.png", 			    ["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Contains some very lewd photos and a interesting statement from a high ranking official!"},	   	['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'lots of big words in these!'},
+	["Data_Usb"]                       = {["name"] = "Data_Usb", 				        ["label"] = "Top Secret Data", 			["weight"] = 500, 		["type"] = "item", 		["image"] = "Data_Usb.png", 			    ["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Contains some very lewd photos and a interesting statement from a high ranking official!"},
