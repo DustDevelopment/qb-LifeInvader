@@ -11,7 +11,7 @@ Uses the latest versions
 
 
 
-## Credit
+## Credit - These people appoved and allowed me use there stuff/help.
 Credit for the original code goes to oOosayeroo Scripts. I used their code as a foundation and modified it to create the LifeEvader heist. Thank you, Oosayeroo, for your valuable work that inspired this project.
 
 ## Add to qb-core/shared/items.lua
