@@ -1,11 +1,8 @@
 Config = {}
 
---===PHONE SETTINGS===--
+
 Config.PhoneScript = 'qb'
--- qb = qb-phone
--- qs = quasar smartphone
--- road = roadphone
--- gks = gks phone
+
 
 Config.DebugHeists = false -- true for testing
 Config.DebugPoly = true
