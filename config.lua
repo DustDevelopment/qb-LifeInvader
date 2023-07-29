@@ -2,10 +2,6 @@ Config = {}
 
 --===PHONE SETTINGS===--
 Config.PhoneScript = 'qb'
--- qb = qb-phone
--- qs = quasar smartphone
--- road = roadphone
--- gks = gks phone
 
 Config.DebugHeists = false -- true for testing
 Config.DebugPoly = true
@@ -25,9 +21,9 @@ Config.HackingTime = 1 --how long for hacking progressbars
 Config.leBossModel = 'a_m_m_business_01'
 Config.leBossLocation = vector4(711.1, -2264.1, 27.53, 39.44)
 Config.leBossScenario = 'WORLD_HUMAN_SMOKING'
-Config.PaymentleMin = 200
-Config.PaymentleMax = 300
-Config.leItemChance = 5 --in % chance of getting random item from below
+Config.PaymentleMin = 20000
+Config.PaymentleMax = 30000
+Config.leItemChance = 50 --in % chance of getting random item from below
 Config.leRewards = {
     'usb4', 
     'usb3',

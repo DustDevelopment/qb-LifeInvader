@@ -4,13 +4,13 @@ game 'gta5'
 
 author 'Dustshader'
 
-description 'qb-lifeevader using qb-target'
+description 'qb-lifeinvader using qb-target'
 
 version '1.3.0'
 
 client_scripts {
 	'client/main.lua',
-	'client/lifeevader.lua'
+	'client/lifeinvader.lua'
 }
 
 server_scripts {
