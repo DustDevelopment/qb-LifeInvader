@@ -2,22 +2,22 @@ local QBCore = exports['qb-core']:GetCoreObject()
 local MoneyType = Config.MoneyType
 local lenpcsspawned = false
 
-RegisterServerEvent("qb-lifeevader:gatherlenpc")
-AddEventHandler("qb-lifeevader:gatherlenpc", function() 
+RegisterServerEvent("qb-lifeivader:gatherlenpc")
+AddEventHandler("qb-lifeivader:gatherlenpc", function() 
     if lenpcsspawned == false then
 		local _source = source
-		TriggerClientEvent("qb-lifeevader:SpawnleGuards", _source)
+		TriggerClientEvent("qb-lifeivader:SpawnleGuards", _source)
 		lenpcsspawned = true
 	end
 end)
 
-RegisterNetEvent('qb-lifeevader:ResetGuardsle', function()
+RegisterNetEvent('qb-lifeivader:ResetGuardsle', function()
     if lenpcsspawned == true then
         lenpcsspawned = false
     end
 end)
 
-RegisterNetEvent('qb-lifeevader:leFinalDone', function()
+RegisterNetEvent('qb-lifeivader:leFinalDone', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
@@ -25,7 +25,7 @@ RegisterNetEvent('qb-lifeevader:leFinalDone', function()
     Player.Functions.AddItem('data_usb', 1)
 end)
 
-RegisterNetEvent('qb-lifeevader:ReceivePaymentle', function()
+RegisterNetEvent('qb-lifeivader:ReceivePaymentle', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local required = 'data_usb'
