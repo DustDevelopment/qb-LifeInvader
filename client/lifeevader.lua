@@ -31,7 +31,6 @@ Citizen.CreateThread(function()
     })
 end)
 
--- le DataBreach Stuff WIP ------------------------------------------------------------------------------------------
 
 RegisterNetEvent('qb-lifeevader:StartleDataBreach', function()
     if GotJob == false then
