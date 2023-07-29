@@ -8,12 +8,13 @@ Uses the latest versions
 ## Dependencies
 -ps-ui found here https://github.com/Project-Sloth/ps-ui 
 
-## Add to qb-core/shared/items.lua
 
 
 
 ## Credit
 Credit for the original code goes to oOosayeroo Scripts. I used their code as a foundation and modified it to create the LifeEvader heist. Thank you, Oosayeroo, for your valuable work that inspired this project.
+
+## Add to qb-core/shared/items.lua
 
 ```
 
