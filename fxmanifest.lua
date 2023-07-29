@@ -2,11 +2,11 @@ fx_version 'cerulean'
 
 game 'gta5'
 
-author 'oosayeroo'
+author 'Dustshader'
 
 description 'qb-lifeevader using qb-target'
 
-version '2.2.0'
+version '1.3.0'
 
 client_scripts {
 	'client/main.lua',

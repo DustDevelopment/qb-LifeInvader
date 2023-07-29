@@ -22,13 +22,13 @@ RegisterNetEvent('qb-lifeevader:leFinalDone', function()
     local Player = QBCore.Functions.GetPlayer(src)
 
     Player.Functions.RemoveItem(Config.HackItem, 1)
-    Player.Functions.AddItem('Data_Usb', 1)
+    Player.Functions.AddItem('data_usb', 1)
 end)
 
 RegisterNetEvent('qb-lifeevader:ReceivePaymentle', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local required = 'Data_Usb'
+    local required = 'data_usb'
     local item = Config.leRewards[math.random(1, #Config.leRewards)]
     local amount = Config.leRewardAmount
     local chance = math.random(100)

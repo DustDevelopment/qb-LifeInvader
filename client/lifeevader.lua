@@ -24,13 +24,12 @@ Citizen.CreateThread(function()
         target = { 
             options = {
                 {type = "client",event = "qb-lifeevader:StartleDataBreach",icon = "fas fa-comment",label = "Start LifeEvader Heist",},
-                {type = "server",event = "qb-lifeevader:ReceivePaymentle",icon = "fas fa-hand",label = "Receive Payment",item = "Data_Usb",},
+                {type = "server",event = "qb-lifeevader:ReceivePaymentle",icon = "fas fa-hand",label = "Receive Payment",item = "data_usb",},
             },
           distance = 2.5,
         },
     })
 end)
-
 
 RegisterNetEvent('qb-lifeevader:StartleDataBreach', function()
     if GotJob == false then
