@@ -1,4 +1,4 @@
-# qb-lifeIvader
+# qb-LifeInvader
 
 Discord - https://discord.gg/2aW2Tatfxp
 
