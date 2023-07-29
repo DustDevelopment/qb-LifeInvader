@@ -1,4 +1,4 @@
-# qb-lifeevader
+# qb-lifeEvader
 
 Discord - https://discord.gg/2aW2Tatfxp
 
