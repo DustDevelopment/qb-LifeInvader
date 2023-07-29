@@ -41,10 +41,13 @@ Config.leGuardWeapon = { --this must be the weapon hash not just the weapon item
 `WEAPON_HEAVYPISTOL`,
 }
 
+
 Config['lesecurity'] = {
+    NumGuardsToSpawn = 1, -- Change this value to the desired number of guards to spawn
     ['lepatrol'] = {
         { coords = vector3(-1053.6, -235.82, 44.02), heading = 205.78, model = 'csb_prolsec'},
-        { coords = vector3(-1074.29, -248.9, 44.02), heading = 123.23, model = 'csb_prolsec'},    },
+        { coords = vector3(-1074.29, -248.9, 44.02), heading = 123.23, model = 'csb_prolsec'},    
+        { coords = vector3(-1065.04, -241.64, 44.02), heading = 123.23, model = 'csb_prolsec'},  
+    },
 }
-
 

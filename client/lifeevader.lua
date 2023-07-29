@@ -158,36 +158,44 @@ function SpawnGuardsle()
     SetPedRelationshipGroupHash(ped, `PLAYER`)
     AddRelationshipGroup('lepatrol')
 
-    for k, v in pairs(Config['lesecurity']['lepatrol']) do
-        loadModel(v['model'])
-        lesecurity['lepatrol'][k] = CreatePed(26, GetHashKey(v['model']), v['coords'], v['heading'], true, true)
-        NetworkRegisterEntityAsNetworked(lesecurity['lepatrol'][k])
-        networkID = NetworkGetNetworkIdFromEntity(lesecurity['lepatrol'][k])
-        SetNetworkIdCanMigrate(networkID, true)
-        SetNetworkIdExistsOnAllMachines(networkID, true)
-        SetPedRandomComponentVariation(lesecurity['lepatrol'][k], 0)
-        SetPedRandomProps(lesecurity['lepatrol'][k])
-        SetEntityAsMissionEntity(lesecurity['lepatrol'][k])
-        SetEntityVisible(lesecurity['lepatrol'][k], true)
-        SetPedRelationshipGroupHash(lesecurity['lepatrol'][k], `lepatrol`)
-        SetPedAccuracy(lesecurity['lepatrol'][k], Config.leGuardAccuracy)
-        SetPedArmour(lesecurity['lepatrol'][k], 100)
-        SetPedCanSwitchWeapon(lesecurity['lepatrol'][k], true)
-        SetPedDropsWeaponsWhenDead(lesecurity['lepatrol'][k], false)
-        SetPedFleeAttributes(lesecurity['lepatrol'][k], 0, false)
-        GiveWeaponToPed(lesecurity['lepatrol'][k], randomgun, 999, false, false)
-        TaskGoToEntity(lesecurity['lepatrol'][k], PlayerPedId(), -1, 1.0, 10.0, 1073741824.0, 0)
-        local random = math.random(1, 2)
-        if random == 2 then
-            TaskGuardCurrentPosition(lesecurity['lepatrol'][k], 10.0, 10.0, 1)
+    local numGuardsToSpawn = tonumber(Config['lesecurity'].NumGuardsToSpawn) -- Ensure NumGuardsToSpawn is a number
+
+    if numGuardsToSpawn and numGuardsToSpawn > 0 then
+        for i = 1, numGuardsToSpawn do
+            local randomGuardIndex = math.random(1, #Config['lesecurity']['lepatrol'])
+            local guardData = Config['lesecurity']['lepatrol'][randomGuardIndex]
+
+            loadModel(guardData['model'])
+            lesecurity['lepatrol'][randomGuardIndex] = CreatePed(26, GetHashKey(guardData['model']), guardData['coords'], guardData['heading'], true, true)
+            NetworkRegisterEntityAsNetworked(lesecurity['lepatrol'][randomGuardIndex])
+            networkID = NetworkGetNetworkIdFromEntity(lesecurity['lepatrol'][randomGuardIndex])
+            SetNetworkIdCanMigrate(networkID, true)
+            SetNetworkIdExistsOnAllMachines(networkID, true)
+            SetPedRandomComponentVariation(lesecurity['lepatrol'][randomGuardIndex], 0)
+            SetPedRandomProps(lesecurity['lepatrol'][randomGuardIndex])
+            SetEntityAsMissionEntity(lesecurity['lepatrol'][randomGuardIndex])
+            SetEntityVisible(lesecurity['lepatrol'][randomGuardIndex], true)
+            SetPedRelationshipGroupHash(lesecurity['lepatrol'][randomGuardIndex], `lepatrol`)
+            SetPedAccuracy(lesecurity['lepatrol'][randomGuardIndex], Config.leGuardAccuracy)
+            SetPedArmour(lesecurity['lepatrol'][randomGuardIndex], 100)
+            SetPedCanSwitchWeapon(lesecurity['lepatrol'][randomGuardIndex], true)
+            SetPedDropsWeaponsWhenDead(lesecurity['lepatrol'][randomGuardIndex], false)
+            SetPedFleeAttributes(lesecurity['lepatrol'][randomGuardIndex], 0, false)
+            GiveWeaponToPed(lesecurity['lepatrol'][randomGuardIndex], randomgun, 999, false, false)
+            TaskGoToEntity(lesecurity['lepatrol'][randomGuardIndex], PlayerPedId(), -1, 1.0, 10.0, 1073741824.0, 0)
+            local random = math.random(1, 2)
+            if random == 2 then
+                TaskGuardCurrentPosition(lesecurity['lepatrol'][randomGuardIndex], 10.0, 10.0, 1)
+            end
         end
+
+        SetRelationshipBetweenGroups(0, `lepatrol`, `lepatrol`)
+        SetRelationshipBetweenGroups(5, `lepatrol`, `PLAYER`)
+        SetRelationshipBetweenGroups(5, `PLAYER`, `lepatrol`)
+    else
+        print("[ERROR] Invalid value for NumGuardsToSpawn in Config['lesecurity']. It must be a number greater than 0.")
     end
-
-    SetRelationshipBetweenGroups(0, `lepatrol`, `lepatrol`)
-    SetRelationshipBetweenGroups(5, `lepatrol`, `PLAYER`)
-    SetRelationshipBetweenGroups(5, `PLAYER`, `lepatrol`)
 end
-
 function Exportle1Target()
     if leHacksDone == 0 then
         leloc = vector3(-1063.42, -247.31, 44.02)
