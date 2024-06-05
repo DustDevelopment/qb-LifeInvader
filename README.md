@@ -1,3 +1,5 @@
+**__SINCE SO MANY PEOPLE WAS SELLING MY SCRIPT FOR MONEY I PAID IT SO PEOPLE CANT AYNYMORE, ITS FREE ON TEBEX NOW where it work through key master# qb-lifeinvader! https://dust-development-fivem.tebex.io/package/6295557__**
+
 # qb-lifeinvader
 
 Discord - https://discord.gg/2aW2Tatfxp
