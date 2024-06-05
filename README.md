@@ -1,1 +1,1 @@
-**__SINCE SO MANY PEOPLE WAS SELLING MY SCRIPT FOR MONEY I PAID IT SO PEOPLE CANT AYNYMORE, ITS FREE ON TEBEX NOW where it work through key master# qb-lifeinvader! https://dust-development-fivem.tebex.io/package/6295557__**
+**__Since so many people were stealing my script and selling it for money, I moved it to Keymaster where it's encrypted. You have to get it off Tebex now, but it's FREE: https://dust-development-fivem.tebex.io/package/6295557__**
